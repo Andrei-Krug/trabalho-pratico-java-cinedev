@@ -23,26 +23,48 @@ public class SalaCine {
                 System.out.print("  " + i); // Alinha os números de 1 a 9 com dois espaços
             } else {
                 System.out.print(" " + i);  // Alinha os números de 10 a 20 com um espaço
-            }
         }
+    }
         System.out.println();
 
-        // Percorre cada fileira (linha da matriz)
+    // Percorre cada fileira (linha da matriz)
         for (int i = 0; i < this.assentos.length; i++) {
-            // Mostra o número da fileira com alinhamento adequado
-            if ((i + 1) < 10) {
-                System.out.print("Fila  " + (i + 1) + ":");
-            } else {
-                System.out.print("Fila " + (i + 1) + ":");
-            }
+    // Mostra o número da fileira com alinhamento adequado
+        if ((i + 1) < 10) {
+            System.out.print("Fila  " + (i + 1) + ":");
+        } else {
+            System.out.print("Fila " + (i + 1) + ":");
+        }
 
-            // Percorre os assentos da fileira (colunas da matriz)
+        // Percorre os assentos da fileira (colunas da matriz)
             for (int j = 0; j < this.assentos[i].length; j++) {
                 System.out.print("[" + this.assentos[i][j] + "]"); // Exibe [L] ou [X]
-            }
+        }
 
             // Quebra de linha para a próxima fileira
             System.out.println();
         }
     }
+    // Realiza a compra de um ingresso (reserva um assento)
+    // Marca o assento como 'X' se estiver livre
+    public void compraingresso(int posi, int assen) {
+        int cordQueue = posi - 1; // Ajusta para índice da matriz (0 a 9)
+        int cordSeat = posi - 1;   // Ajusta para índice da matriz (0 a 19)
+
+        // Verifica se a posição é válida na matriz
+        if ((posi >= 1 && posi <= 10) && (assen >= 1 && assen <= 20)) {
+            // Verifica se o assento está livre
+            if (this.assentos[cordQueue][cordSeat] == 'L') {
+                System.out.println("Assento reservado, compra concluída.");
+                this.assentos[cordQueue][cordSeat] = 'X'; // Marca como ocupado
+            } else {
+                System.out.println("Lugar já reservado.");
+                return;
+            }
+        } else {
+            System.out.println("Não existe nenhum assento nas coordenadas informadas.");
+            return;
+        }
+    }
+    
 }
