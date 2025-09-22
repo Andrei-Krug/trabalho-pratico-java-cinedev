@@ -1,8 +1,9 @@
 trabalho-pratico-java-cinedev
 Trabalho de conclusão de UC lógica de programação
 
-Nome: Andrei Vinícius Krug 
-Matrícula:467724 
+Nome: Andrei Vinícius Krug e Yuri Mendes
+
+Matrícula:467724 / 360420
 
 ----------------------------------------------------------------------------------------------------------------------------
 
