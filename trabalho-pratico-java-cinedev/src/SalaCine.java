@@ -66,5 +66,26 @@ public class SalaCine {
             return;
         }
     }
-    
+    // Cancela uma reserva, liberando o assento
+    // Marca o assento como 'L' se estiver ocupado
+    public void cancelaingresso (int posi, int assen) {
+        int cordQueue = posi - 1;
+        int cordSeat = posi - 1;
+
+        // Verifica se a posição é válida na matriz
+        if ((posi >= 1 && posi <= 10) && (assen >= 1 && assen <= 20)) {
+            // Verifica se o assento está ocupado
+            if (this.assentos[cordQueue][cordSeat] == 'X') {
+                System.out.println("Reserva cancelada com sucesso.");
+                this.assentos[cordQueue][cordSeat] = 'L'; // Marca como livre
+            } else {
+                System.out.println("O lugar já está livre.");
+                return;
+            }
+        } else {
+            System.out.println("Não existe nenhum assento nas coordenadas informadas.");
+            return;
+        }
+    }
+
 }
