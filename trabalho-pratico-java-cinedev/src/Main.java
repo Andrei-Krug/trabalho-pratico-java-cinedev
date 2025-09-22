@@ -44,7 +44,8 @@ public class Main {
                     sala.relatorioDeOcupacao();
                     break;
 
-                case 5: //Saindo do menu
+                case 5: //Saindo do menu1
+                    
                     System.out.println("Saindo... Obrigado por usar o CineDev!");
                     break;
 
