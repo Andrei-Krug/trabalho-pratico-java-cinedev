@@ -20,7 +20,7 @@ Cancelamento de reservas, liberando os assentos para nova utilização.
 
 Geração de um relatório de ocupação com o status detalhado da sala.
 
-A interação acontece por meio de um menu em loop, utilizando estruturas de decisão (switch) para navegar entre as opções.
+A interação acontece por meio de um menu em loop, utilizando estrutura de decisão (switch) para navegar entre as opções.
 
 A sala de cinema é representada internamente por uma matriz bidimensional char[10][20], em que:
 
