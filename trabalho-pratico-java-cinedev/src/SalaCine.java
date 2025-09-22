@@ -13,10 +13,10 @@ public class SalaCine {
             }
         }
     }
-       // Exibe o mapa da sala com todos os assentos formatados
+    // Exibe o mapa da sala com todos os assentos formatados
     // Cada assento é mostrado como [L] (livre) ou [X] (ocupado)
     public void mostrarAssentos() {
-        // Cabeçalho com os números dos assentos (colunas)
+    // Cabeçalho com os números dos assentos (colunas)
         System.out.print("Assentos:");
         for (int i = 1; i <= 20; i++) {
             if (i < 10) {
@@ -36,13 +36,13 @@ public class SalaCine {
             System.out.print("Fila " + (i + 1) + ":");
         }
 
-        // Percorre os assentos da fileira (colunas da matriz)
+    // Percorre os assentos da fileira (colunas da matriz)
             for (int j = 0; j < this.assentos[i].length; j++) {
                 System.out.print("[" + this.assentos[i][j] + "]"); // Exibe [L] ou [X]
         }
 
-            // Quebra de linha para a próxima fileira
-            System.out.println();
+    // Quebra de linha para a próxima fileira
+        System.out.println();
         }
     }
     // Realiza a compra de um ingresso (reserva um assento)
@@ -51,9 +51,9 @@ public class SalaCine {
         int cordQueue = posi - 1; // Ajusta para índice da matriz (0 a 9)
         int cordSeat = posi - 1;   // Ajusta para índice da matriz (0 a 19)
 
-        // Verifica se a posição é válida na matriz
+    // Verifica se a posição é válida na matriz
         if ((posi >= 1 && posi <= 10) && (assen >= 1 && assen <= 20)) {
-            // Verifica se o assento está livre
+    // Verifica se o assento está livre
             if (this.assentos[cordQueue][cordSeat] == 'L') {
                 System.out.println("Assento reservado, compra concluída.");
                 this.assentos[cordQueue][cordSeat] = 'X'; // Marca como ocupado
@@ -97,7 +97,7 @@ public class SalaCine {
         int assentosOcupados = 0;
         int todosAssentos = 0;
 
-        // Conta todos os assentos e quantos estão ocupados
+    // Conta todos os assentos e quantos estão ocupados
         for (int i = 0; i < this.assentos.length; i++) {
             for (int j = 0; j < this.assentos[i].length; j++) {
                 todosAssentos++; // Soma ao total
@@ -107,11 +107,11 @@ public class SalaCine {
             }
         }
 
-        // Calcula o percentual de ocupação (em %)
+    // Calcula o percentual de ocupação (em %)
         double porcentagemDeOcupacao = ((double) assentosOcupados / todosAssentos) * 100;
         int freeSeats = todosAssentos - assentosOcupados;
 
-        // Exibe os dados do relatório
+    // Exibe os dados do relatório
         System.out.println("Total de assentos: " + todosAssentos);
         System.out.println("Assentos ocupados: " + assentosOcupados);
         System.out.println("Assentos livres: " + freeSeats);
