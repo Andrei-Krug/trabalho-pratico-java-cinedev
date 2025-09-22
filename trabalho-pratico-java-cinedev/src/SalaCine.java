@@ -87,5 +87,35 @@ public class SalaCine {
             return;
         }
     }
+    
+    // Gera e exibe um relatório com:
+    // - Total de assentos
+    // - Assentos ocupados
+    // - Assentos livres
+    // - Percentual de ocupação da sala
+    public void relatorioDeOcupacao() {
+        int assentosOcupados = 0;
+        int todosAssentos = 0;
 
+        // Conta todos os assentos e quantos estão ocupados
+        for (int i = 0; i < this.assentos.length; i++) {
+            for (int j = 0; j < this.assentos[i].length; j++) {
+                todosAssentos++; // Soma ao total
+                if (this.assentos[i][j] == 'X') {
+                    assentosOcupados++; // Soma se estiver ocupado
+                }
+            }
+        }
+
+        // Calcula o percentual de ocupação (em %)
+        double porcentagemDeOcupacao = ((double) assentosOcupados / todosAssentos) * 100;
+        int freeSeats = todosAssentos - assentosOcupados;
+
+        // Exibe os dados do relatório
+        System.out.println("Total de assentos: " + todosAssentos);
+        System.out.println("Assentos ocupados: " + assentosOcupados);
+        System.out.println("Assentos livres: " + freeSeats);
+        System.out.printf("Percentual de ocupação: %.2f%%\n", porcentagemDeOcupacao);
+        System.out.println();
+    }
 }
